@@ -7,7 +7,7 @@ const ident = factor.get("_id");
 //récupération de l'id dans le fetch
 fetch("http://localhost:3000/api/products" + ident)
     .then((reponse) => response.json())
-    .then((products) => displayProducts(products))
+    .then((products) => showProducts(products))
     .catch((error) => alert("Chargement impossible, le serveur ne répond pas"));
 
 

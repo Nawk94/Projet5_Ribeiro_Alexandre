@@ -1,7 +1,7 @@
 //récupération des produits + réponse en json + affichage résultat + message d'erreur
 fetch("http://localhost:3000/api/products")
     .then((reponse) => response.json())
-    .then((products) => displayProducts(products))
+    .then((products) => showProducts(products))
     .catch((error) => alert("Chargement impossible, le serveur ne répond pas"));
 
 //fonction d'affichage avec boucle for afin de parcourir et d'insérer les éléments + lien vers html et récupération de l'id
@@ -25,7 +25,7 @@ function showProducts(products) {
 		linkElement.appendChild(articlElement);
 		articlElement.appendChild(picElement);
 		articlElement.appendChild(titlElement);
-		articlElement.appendChild(descrElement)
+		articlElement.appendChild(descrElement);
 	};
 
 };
