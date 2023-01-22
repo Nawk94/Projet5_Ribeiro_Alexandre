@@ -1,6 +1,6 @@
 //récupération des produits + réponse en json + affichage résultat + message d'erreur
 fetch("http://localhost:3000/api/products")
-    .then((reponse) => response.json())
+    .then((response) => response.json())
     .then((products) => showProducts(products))
     .catch((error) => alert("Chargement impossible, le serveur ne répond pas"));
 
@@ -8,7 +8,7 @@ fetch("http://localhost:3000/api/products")
 function showProducts(products) {
 	const productElement = document.getElementById("items");
 
-	for (const products of products) {
+	for (const product of products) {
 		const linkElement = document.createElement("a");
 		linkElement.href = "./product.html?_id=" + product._id;
 		const articlElement = document.createElement("article");
