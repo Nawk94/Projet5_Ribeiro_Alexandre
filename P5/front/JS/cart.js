@@ -20,7 +20,7 @@ async function getProductApi(products) {
   if (products === null || products == 0) { 
     const cartNoElement =
       `<article class="container-cart-empty">
-      <div> Le panier est vide. Veuillez rajouter des articles à partir de la page d'accueil avant de passer commande. Merci de votre compréhension.</div> </article>`;
+      <div> Le panier est vide. Veuillez sélectioner des articles afin de passer commande.</div> </article>`;
 
     cartElement.innerHTML = cartNoElement;
 
@@ -190,7 +190,7 @@ const firstNameElement = document.getElementById("firstName");
 const lastNameElement = document.getElementById("lastName");
 const addressElement = document.getElementById("address");
 const cityElement = document.getElementById("city");
-const emailForm = document.getElementById("email");
+const emailElement = document.getElementById("email");
 
 // création de variables afin de récuépérer les informations rentrées par les utilisateurs 
 let inputFirstName;
@@ -207,7 +207,7 @@ firstNameElement.addEventListener("input", (event) => {
     inputFirstName = null;
   }
   else if (event.target.value.length < 2 || event.target.value.length > 15) {
-    firstNameErrorMsg.innerText = "Le prénom doit comprendre entre 2 et 15 caractères";
+    firstNameErrorMsg.innerText = "Votre prénom doit comprendre entre 2 et 15 caractères";
     inputFirstName = null;
   }
   if (event.target.value.match(/^[a-z A-Z áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ]{2,15}$/)) { // regex
@@ -219,7 +219,7 @@ firstNameElement.addEventListener("input", (event) => {
     event.target.value.length > 2 &&
     event.target.value.length < 15
   ) {
-    firstNameErrorMsg.innerText = "Pas de caractères spéciaux et pas de chiffres dans votre prénom s'il vous plait.";
+    firstNameErrorMsg.innerText = "Pas de caractères spéciaux et pas de chiffres dans votre prénom s'il vous plaît.";
     inputFirstName = null;
   }
 });
@@ -232,7 +232,7 @@ lastNameElement.addEventListener("input", (event) => {
     inputLastName = null; 
   }
   else if (event.target.value.length < 2 || event.target.value.length > 15) {
-    lastNameErrorMsg.innerText = "Le nom doit comprendre entre 2 et 15 caractères";
+    lastNameErrorMsg.innerText = "Votre nom doit comprendre entre 2 et 15 caractères";
     inputLastName = null;
   }
   if (event.target.value.match(/^[a-z A-Z áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ]{2,15}$/)) { // regex
@@ -244,7 +244,7 @@ lastNameElement.addEventListener("input", (event) => {
     event.target.value.length > 2 &&
     event.target.value.length < 15
   ) {
-    lastNameErrorMsg.innerText = "Pas de caractères spéciaux et pas de chiffres dans votre nom s'il vous plait.";
+    lastNameErrorMsg.innerText = "Pas de caractères spéciaux et pas de chiffres dans votre nom s'il vous plaît.";
     inputLastName = null;
   }
 });
@@ -257,7 +257,7 @@ addressElement.addEventListener("input", (event) => {
     inputAddress = null;
   }
   else if (event.target.value.length < 2 || event.target.value.length > 30) {
-    addressErrorMsg.innerText = "L'adresse doit comprendre entre 2 et 30 caractères.";
+    addressErrorMsg.innerText = "Votre adresse doit comprendre entre 2 et 30 caractères.";
     inputAddress = null;
   }
   if (event.target.value.match(/^[0-9]{1,5} [a-z A-Z áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ]{2,30}$/)) { // regex
@@ -269,7 +269,7 @@ addressElement.addEventListener("input", (event) => {
     event.target.value.length > 2 &&
     event.target.value.length < 30
   ) {
-    addressErrorMsg.innerText = "pas de caractères spéciaux dans votre adresse s'il vous plait";
+    addressErrorMsg.innerText = "pas de caractères spéciaux dans votre adresse s'il vous plaît";
     inputAddress = null;
   }
 });
@@ -282,7 +282,7 @@ cityElement.addEventListener("input", (event) => {
     inputCity = null;
   }
   else if (event.target.value.length < 2 || event.target.value.length > 15) {
-    cityErrorMsg.innerText = "La ville doit comprendre entre 2 et 25 caractères.";
+    cityErrorMsg.innerText = "Le nom de votre ville doit comprendre entre 2 et 15 caractères.";
     inputCity = null;
   }
   if (event.target.value.match(/^[a-z A-Z áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ]{2,15}$/)) { // regex
@@ -294,7 +294,7 @@ cityElement.addEventListener("input", (event) => {
     event.target.value.length > 2 &&
     event.target.value.length < 15
   ) {
-    cityErrorMsg.innerText = "Pas de caractères spéciaux et pas de chiffres dans le nom de votre ville s'il vous plait.";
+    cityErrorMsg.innerText = "Pas de caractères spéciaux et pas de chiffres dans le nom de votre ville s'il vous plaît.";
     inputCity = null;
   }
 });
@@ -310,40 +310,40 @@ emailElement.addEventListener("input", (event) => {
     inputEmail = event.target.value;
   }
   if (!event.target.value.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/) && !event.target.value.length == 0) {
-    emailErrorMsg.innerText = "Veuillez entrer une adresse email respectant le bon format (ex: exemple@exemple.com).";
+    emailErrorMsg.innerText = "Veuillez entrer une adresse mail respectant le bon format (ex: exemple@exemple.com) s'il vous plaît.";
     inputEmail = null;
   }
 });
 
 //pour envoyer l'ensemble des informations 
 
-let formContactElementSubmit = document.querySelector(".cart__order");
+let infoElementContact = document.querySelector(".cart__order");
 
-formContactElementSubmit.addEventListener("submit", (event) => {
+infoElementContact.addEventListener("submit", (event) => {
   event.preventDefault();
 
   if (inputFirstName && inputLastName && inputAddress && inputCity && inputEmail) {
-    const lastOrderElement = JSON.parse(localStorage.getItem("product"));
-    let orderElementId = [];
+    const lastElementOrder = JSON.parse(localStorage.getItem("product"));
+    let orderId = [];
 
-    lastOrderElement.forEach((order) => {
-      orderElementId.push(order.id);
+    lastElementOrder.forEach((order) => {
+      orderId.push(order.id);
     });
 
-    // Données attendues par le controller
+    // on controle 
     const data = {
       contact: {
-        firstName: valueFirstName,
-        lastName: valueLastName,
-        address: valueAddress,
-        city: valueCity,
-        email: valueEmail,
+        firstName: inputFirstName,
+        lastName: inputLastName,
+        address: inputAddress,
+        city: inputCity,
+        email: inputEmail,
       },
-      products: orderElementId,
+      products: orderId,
     };
 
 
-    // Fetch post
+    // Fetch 
     fetch("http://localhost:3000/api/products/order", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -351,14 +351,14 @@ formContactElementSubmit.addEventListener("submit", (event) => {
     })
       .then((res) => res.json())
       .then(data => {
-        document.location.href = `confirmation.html?id=` + data.orderElementId;
+        document.location.href = `confirmation.html?id=` + data.orderId;
         localStorage.removeItem("product");
       });
 
-    //On efface le formulaire pour éviter les erreurs
+    //On efface le formulaire
     firstNameElement.value = "";
     lastNameElement.value = "";
-    addressElement.value = "";
+    addressElementvalue = "";
     cityElement.value = "";
     emailElement.value = "";
     inputFirstName = null;
@@ -368,6 +368,6 @@ formContactElementSubmit.addEventListener("submit", (event) => {
     inputEmail = null;
 
   } else {
-    alert("verifier le formulaire.")
+    alert("vérifier le formulaire s'il vous plait.")
   }
 });

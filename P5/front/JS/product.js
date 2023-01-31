@@ -83,7 +83,7 @@ function displayElementProduct(product) {
 				choice.color === "" ||
 				choice.color === undefined
 			) {
-				alert ("Veuillez choisir une couleur pour votre canapé avant de l'ajouter à votre panier")
+				alert ("Veuillez choisir une couleur et/ou une quantité pour votre canapé avant de l'ajouter à votre panier")
 			} else if
 				//si le local storage contient déja des produits avec la même ide et la même couleur et si des produits sont présent avec les même key
 				(itemsLocalStorage) {

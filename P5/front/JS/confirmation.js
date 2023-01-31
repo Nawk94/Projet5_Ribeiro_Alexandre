@@ -1,10 +1,11 @@
+//on récupere l'orderId
 const url = window.location.search;
 const params = new URLSearchParams(url);
-const finalBasketElementId = params.get("id");
+const orderId = params.get("id");
 
-function showFinalOrder() {
-    const finalOrderElement = document.getElementById("orderId");
-    finalOrderElement.innerText = finalBasketElementId;
+function ShowLastOrder() {
+    const lastOrderElementoShow = document.getElementById("orderId");
+    lastOrderElementoShow.innerText = orderId;
 };
 
-showFinalOrder();
+ShowLastOrder();
