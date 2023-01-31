@@ -1,6 +1,6 @@
 //récupération des produits + réponse en json + affichage résultat + message d'erreur
 fetch("http://localhost:3000/api/products")
-    .then((response) => response.json())
+    .then(r => r.json())
     .then((products) => showProducts(products))
     .catch((error) => alert("Chargement impossible, le serveur ne répond pas"));
 
